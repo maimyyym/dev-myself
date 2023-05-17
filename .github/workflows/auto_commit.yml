@@ -2,7 +2,7 @@ name: Auto Commit and Push
 
 on:
   schedule:
-    - cron:  '０ ０ * * *'  # This will run at 2 AM every day
+    - cron:  '０ 1 * * *'  # This will run at 2 AM every day
 
 jobs:
   build:
