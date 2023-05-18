@@ -2,7 +2,7 @@ name: Auto Commit and Push LearningRecord
 
 on:
   schedule:
-    - cron:  '17 21 * * *'
+    - cron:  '22 21 * * *'
 
 jobs:
   build:
@@ -12,7 +12,7 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v2
       with:
-        fetch-depth: 0  # Important: This will fetch all history for all branches and tags.
+        fetch-depth: 0
 
     - name: Setup Git
       run: |
@@ -22,5 +22,5 @@ jobs:
     - name: Commit and push
       run: |
         git add learn_record/*
-        git diff --quiet && git diff --staged --quiet || ((DATE=$(date -u -d '9 hours ago' +"%Y%m%d"); git commit -m "Automatic update for $DATE" || true) 
+        git diff --quiet && git diff --staged --quiet || (DATE=$(date -u -d '9 hours ago' +"%Y%m%d"); git commit -m "Automatic update for $DATE") 
         git push origin main
