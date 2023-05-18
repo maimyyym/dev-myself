@@ -2,25 +2,24 @@ name: Auto Commit and Push LearningRecord
 
 on:
   schedule:
-    - cron:  '26 12 * * *'
+    - cron:  '28 12 * * *'
+  workfliw_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
+      - name: Checkout repo
+        uses: actions/checkout@v2
 
-    - name: Setup Git
-      run: |
-        git config --global user.name "maimy"
-        git config --global user.email "m.711029@gmail.com"
+      - name: Setup Git
+        run: |
+          git config --global user.name "maimy"
+          git config --global user.email "m.711029@gmail.com"
 
-    - name: Commit and push
-      run: |
-        git add learn_record/*
-        git diff --quiet && git diff --staged --quiet || (DATE=$(date -u -d '9 hours ago' +"%Y%m%d"); git commit -m "Automatic update for $DATE") 
-        git push origin main
+      - name: Commit and push
+        run: |
+          git add learn_record/*
+          git diff --quiet && git diff --staged --quiet || (DATE=$(date -u -d '9 hours ago' +"%Y%m%d"); git commit -m "Automatic update for $DATE") 
+          git push origin main
