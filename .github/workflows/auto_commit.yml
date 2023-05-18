@@ -2,8 +2,7 @@ name: Auto Commit and Push LearningRecord
 
 on:
   schedule:
-    - cron:  '35 12 * * *'
-  workflow_dispatch:
+    - cron:  '38 12 * * *'
 
 jobs:
   build:
@@ -12,6 +11,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Setup Git
         run: |
