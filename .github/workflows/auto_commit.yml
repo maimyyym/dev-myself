@@ -2,7 +2,7 @@ name: Auto Commit and Push LearningRecord
 
 on:
   schedule:
-    - cron:  '45 12 * * *'
+    - cron:  '0 14 * * *'
 
 jobs:
   build:
