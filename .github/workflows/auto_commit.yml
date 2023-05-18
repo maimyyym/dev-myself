@@ -1,8 +1,8 @@
-name: Auto Commit and Push
+name: Auto Commit and Push LearningRecord
 
 on:
   schedule:
-    - cron:  '35 11 * * *'  # This will run at 2 AM every day
+    - cron:  '45 11 * * *'
 
 jobs:
   build:
@@ -23,7 +23,7 @@ jobs:
       run: |
         git add learn_record/.
         if [ -n "$(git status --porcelain)" ]; then
-          DATE=$(date -u -d "$GITHUB_ACTION_STARTED_AT -1 day" +"%Y%m%d")
+          DATE=$(date -u -d '-1 day ago' +"%Y%m%d")
           git commit -m "[test]learning record[$DATE]"
           git push
         else
