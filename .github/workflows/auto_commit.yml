@@ -3,7 +3,7 @@ name: Auto Commit and Push LearningRecord
 on:
   schedule:
     - cron:  '10 14 * * *'
-  workflow.dispatch:
+  workflow_dispatch:
 
 jobs:
   build:
