@@ -26,5 +26,6 @@ jobs:
           git add learn_record/*
           git diff --quiet && git diff --staged --quiet || (DATE=$(date -u -d '9 hours ago' +"%Y%m%d"); git commit -m "Automatic update for $DATE") 
           git push origin main
-        env:
-          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
