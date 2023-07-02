@@ -60,7 +60,7 @@
     - NestJS：公式docs完走。ToDoアプリのAPI作成。
     - TypeScriptを極める試み
 - Review
-    - NestJS公式docs感想。アプリ開発は別のものへシフト。
+    - NestJS公式docs完走。アプリ開発は別のものへシフト。
     - 上記に伴いTypeScriptもこれから。
     - Feedly→ChatGPT→Slackにニュースを要約して投稿してくれるbot実装
     - GitHubApps使った
@@ -73,3 +73,9 @@
 - Plan
     - GitHub連携のアプリ開発：動作を確認しながら構成を考え、小さな実装をこなす。
     - SAA対策を進める。
+- Review
+    - GitHubAppでpushイベント→Lambdaに通知→DynamoDBに取得したmdファイルのテキストを格納！
+    - 記事を参考にVPC構築
+    - [よかったこと]色々なことを達成できた。
+    - [反省点]レスポンスの型が分からずmdファイル取得に手こずった。
+    - [Next]調子がいいので気を抜かず楽しんでいく。
